@@ -180,7 +180,7 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
   <div class="mast-in">
     <a class="mark" href="#home" aria-label="BorderLAN Cybersecurity, home"><span class="w"><span>Border</span><b>LAN</b></span><span class="s">CYBERSECURITY</span></a>
     <div><h1>Sales Habits 2026</h1><div class="sub">Interactive training</div></div>
-    <div class="meter" aria-live="polite"><div class="bar"><div class="fill" id="meterFill"></div></div><div class="lbl" id="meterLbl"><b>0</b> of 7 modules</div></div>
+    <div class="meter" aria-live="polite"><div class="bar"><div class="fill" id="meterFill"></div></div><div class="lbl" id="meterLbl"><b>0</b> of 8 modules</div></div>
   </div>
 </header>
 
@@ -194,6 +194,16 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
   // ---------- content ----------
   const NTAB = ['Need', 'Timeline', 'Authority', 'Budget'];
   const ch = (t, ok, why) => ({ t, ok: !!ok, why });
+
+  const PRODUCTS = [
+    { id: 'mon', name: '24/7 monitoring and threat response', two: 'We watch your network around the clock and act when something looks wrong. You get a security team at 2 a.m. without hiring one.', problem: 'Nobody watches alerts after hours or on weekends.', q: 'Who sees your security alerts at night and on weekends?' },
+    { id: 'fw', name: 'Firewall and email security', two: 'We manage the firewall at the edge of your network and block phishing and malicious email before it reaches inboxes. Most attacks start at one of those two doors.', problem: 'An old or unmanaged firewall, or phishing emails getting through.', q: 'How old is your firewall, and who manages it today?' },
+    { id: 'bak', name: 'Backup and ransomware recovery', two: 'We back up your critical systems and test that you can restore them. If ransomware hits, you can get back up and running without paying a ransom.', problem: 'Backups nobody has tested, or no idea how long recovery would take.', q: 'When did you last test a restore, and how long did it take?' },
+    { id: 'trn', name: 'Employee security training', two: 'We train your staff to spot phishing and run practice tests so you can see who clicks. People are the most common way attackers get in.', problem: 'Staff clicking on phishing emails, or no training in place.', q: 'What happens today when someone gets a suspicious email?' },
+    { id: 'fil', name: 'Web filtering and student safety', two: 'We filter web traffic on school devices, on and off campus, and flag warning signs for student safety. It helps schools meet internet safety rules and protect students.', problem: 'Students reach anything on school devices, especially at home.', q: 'How do you filter web access on school devices at home?' },
+  ];
+  // One product a month, starting November 2026
+  const productOfMonth = () => { const d = new Date(); const k = (d.getFullYear() - 2026) * 12 + d.getMonth() - 10; return PRODUCTS[Math.max(0, k) % 5]; };
 
   const MODULES = [
     { id: 'm1', title: 'Four questions', blurb: 'Is it a real opportunity? Need, Timeline, Authority, Budget.', steps: [
@@ -390,6 +400,39 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
       ] },
       { kind: 'commit', label: 'Commit', habit: 'Every Friday I will check my pipeline, score my week, and log it in the Habit Tracker.' },
     ] },
+    { id: 'm8', title: 'Learn one product a month', blurb: 'Know one BorderLAN product cold every month: two sentences, the problem, the question.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'One product, every month', body: `
+        <p>Every month, learn one BorderLAN product well enough to explain it without notes. Not every feature. Just three things:</p>
+        <div class="cards">
+          <div class="lcard"><span class="k">1</span><b>Two sentences</b><small>What it does and what it means for the customer, in plain words.</small></div>
+          <div class="lcard"><span class="k">2</span><b>The problem it solves</b><small>What the customer says when they need it. Listen for it on calls.</small></div>
+          <div class="lcard"><span class="k">3</span><b>The question that finds it</b><small>One open question that tells you if the need is there.</small></div>
+        </div>
+        <div class="callout"><b>Why it matters.</b> When you know what problem a product solves, you hear the need on a call instead of reciting features. Five products, one a month, and in five months you know the whole lineup. The Tools page shows this month’s product.</div>` },
+      { kind: 'pick', label: 'Practice', title: 'Which product fits?', intro: 'Read what the prospect said. Pick the product that solves it.', items: [
+        { quote: 'Our alerts go to my inbox, and nobody looks at them after 5 p.m. or on weekends.', choices: PRODUCTS.map(x => ch(x.name, x.id === 'mon', x.id === 'mon' ? 'Right. Someone watching around the clock is exactly the gap.' : 'The clue is "nobody looks after 5 p.m." That is 24/7 monitoring.')) },
+        { quote: 'Two of our staff clicked a fake invoice email last month.', choices: PRODUCTS.map(x => ch(x.name, x.id === 'trn' || x.id === 'fw', x.id === 'trn' ? 'Right. Training and practice tests help staff spot the next one.' : x.id === 'fw' ? 'Right. Email security stops more of these before they reach inboxes. Pair it with training.' : 'This is a phishing problem: email security and staff training.')) },
+        { quote: 'Students can get to anything on their school laptops once they take them home.', choices: PRODUCTS.map(x => ch(x.name, x.id === 'fil', x.id === 'fil' ? 'Right. Filtering that follows the device on and off campus.' : 'The clue is students and school laptops: web filtering and student safety.')) },
+        { quote: 'If ransomware hit us, honestly, I don’t know how long it would take to get back.', choices: PRODUCTS.map(x => ch(x.name, x.id === 'bak', x.id === 'bak' ? 'Right. Backups you have tested are how you recover without paying.' : 'The clue is "how long to get back." That is backup and recovery.')) },
+        { quote: 'Our firewall is about eight years old and the guy who set it up left.', choices: PRODUCTS.map(x => ch(x.name, x.id === 'fw', x.id === 'fw' ? 'Right. An old firewall nobody manages is a real risk.' : 'The clue is the old, unmanaged firewall.')) },
+      ] },
+      { kind: 'pick', label: 'Practice', title: 'Pick the best two sentences', intro: 'A prospect asks, "So what do you actually do?" Pick the answer you would give.', items: [
+        { prompt: 'Explaining backup and ransomware recovery.', choices: [
+          ch('"We provide immutable, air-gapped, multi-tier backup with granular RPO and RTO options across hybrid workloads."', 0, 'Accurate words, but most buyers stop listening at "immutable."'),
+          ch('"We back up your critical systems and test that you can restore them. If ransomware hits, you can get back up and running without paying a ransom."', 1, 'Plain words, and it ends on what the customer gets.'),
+          ch('"We have backup, plus monitoring, filtering, firewalls, email security, and training too."', 0, 'That is a product list. Pick one and explain it well.') ] },
+        { prompt: 'Explaining 24/7 monitoring and threat response.', choices: [
+          ch('"We watch your network around the clock and act when something looks wrong. You get a security team at 2 a.m. without hiring one."', 1, 'Two sentences, and the second one is the reason to care.'),
+          ch('"It’s a SOC with SIEM and EDR telemetry correlation."', 0, 'Too much jargon for a first conversation.'),
+          ch('"It’s really good. Everyone loves it."', 0, 'That says nothing about what it does.') ] },
+      ] },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'What three things do you learn about each product?', choices: [ch('Every feature, the price, and the competitors', 0, 'Too much for one month. Start with the three basics.'), ch('Two sentences, the problem it solves, and the question that finds it', 1, 'Right.'), ch('The datasheet, word for word', 0, 'Know it in your own words.')] },
+        { prompt: 'Why learn the problem a product solves?', choices: [ch('So you can hear the need on a call', 1, 'Right. Then you ask about it instead of pitching it.'), ch('So you can pitch it in the first minute', 0, 'Ask first. Products come after the need.'), ch('So you never need your solution engineer', 0, 'Your SE still helps on deeper questions.')] },
+        { prompt: 'How often do you learn a new product?', choices: [ch('Once a year', 0, 'Too slow.'), ch('Once a month', 1, 'Right. One product each month.'), ch('Only when a customer asks', 0, 'Then it is too late for that call.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'Every month I will learn one BorderLAN product cold: two sentences, the problem it solves, and the question that finds it.' },
+    ] },
   ];
 
   // ---------- state ----------
@@ -431,7 +474,7 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
     st.appendChild(h('div', { class: 'home-hero' }, `
       <span class="eyebrow">How we sell at BorderLAN</span>
       <h2>Small habits, done every day, win deals.</h2>
-      <p>Seven short modules, about ten minutes each. Every module has a quick lesson, a practice round with real BorderLAN situations, a three-question check, and one habit to commit to. Your progress saves on this device.</p>
+      <p>Eight short modules, about ten minutes each. Every module has a quick lesson, a practice round with real BorderLAN situations, a three-question check, and one habit to commit to. Your progress saves on this device.</p>
       <div>${next ? `<button class="btn brand" type="button" id="startBtn">${n ? 'Continue: ' + esc(next.title) : 'Start Module 1'}</button>` : `<button class="btn brand" type="button" id="startBtn">You finished. See your mock call checklist</button>`}</div>`));
     const grid = h('div', { class: 'mods' });
     MODULES.forEach((m, i) => {
@@ -698,9 +741,14 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
 
     const wk = h('div', { class: 'tool' }, '<h3>My week</h3><p class="muted">On Friday, count the days you did each habit. Then enter the same numbers in the Weekly Log in the Habit Tracker.</p>');
     wk.appendChild(weekCalc('tool'));
-    wk.appendChild(h('p', { class: 'muted', style: 'margin:0' }, 'The Habit Tracker is in the Sales site on SharePoint: <a href="https://borderlan.sharepoint.com/sites/Sales/Sales%20Enablement/Forms/AllItems.aspx" target="_blank" rel="noopener">open the Sales Enablement library</a>.'));
+    wk.appendChild(h('p', { style: 'margin:0' }, 'Keep the one-page Habit Card at your desk: <a class="btn brand" style="display:inline-block;text-decoration:none;margin-left:6px" href="BorderLAN-Habit-Card.pdf" target="_blank" rel="noopener">Open the printable Habit Card</a>'));
     b.appendChild(wk);
 
+    const pm = productOfMonth();
+    const pt = h('div', { class: 'tool' }, `<h3>Product of the month</h3><p class="muted" style="margin:0">This month, learn <b>${esc(pm.name)}</b> cold. Then work down the list, one a month.</p>`);
+    PRODUCTS.forEach(x => pt.appendChild(h('div', { class: 'lcard' + (x === pm ? '' : ''), style: x === pm ? 'border-color:var(--brand);border-width:2px' : '' },
+      `<b>${esc(x.name)}${x === pm ? ' <span class="pill g" style="margin-left:6px">This month</span>' : ''}</b><span>${esc(x.two)}</span><small><b>Listen for:</b> ${esc(x.problem)}</small><small><b>Ask:</b> “${esc(x.q)}”</small>`)));
+    b.appendChild(pt);
     const tq = h('div', { class: 'tool' }, '<h3>The ten questions</h3>');
     const ol = h('ol', { class: 'ten' });
     MODULES[2].steps.find(s => s.kind === 'flash').items.forEach(([q]) => ol.appendChild(h('li', {}, esc(q))));
@@ -716,7 +764,7 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
     const n = doneCount(), all = n === MODULES.length;
     const left = MODULES.filter(m => !S.done[m.id]).map(m => m.title);
     st.appendChild(h('div', { class: 'badge' }, `
-      <div class="seal">${all ? '✓' : n + '/7'}</div>
+      <div class="seal">${all ? '✓' : n + '/' + MODULES.length}</div>
       <h2>${all ? 'You are ready for your mock call' : 'Almost there'}</h2>
       <p class="muted" style="max-width:56ch">${all ? 'In week 12, you run a 10-minute mock call with your manager. You pass with five of these six.' : 'Finish these modules to unlock your mock call: ' + esc(left.join(', ')) + '.'}</p>
       <ul class="checklist">
