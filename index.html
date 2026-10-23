@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="BorderLAN Sales Habits 2026 interactive training">
+<title>Sales Habits 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout: ink masthead with progress, then a module rail and a one-step-at-a-time lesson stage. */
+:root {
+  --brand: #00AAC8; --brand-deep: #007F96; --ink: #16171D;
+  --bg: #F4F7F8; --surface: #FFFFFF; --fg: #1B1E24; --muted: #5C656D; --line: #D9E1E4; --tint: #E3F5F8;
+  --go: #22804D; --go-bg: #E2F3E8; --warn: #A86E14; --warn-bg: #FBF0D9; --stop: #B83A2E; --stop-bg: #FBE5E2;
+  --on-brand: #FFFFFF; --mast-fg: #FFFFFF; --mast-muted: #A9B6BB;
+  --f-display: "Raleway", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --brand: #25C4DE; --brand-deep: #5CD3E7; --bg: #101317; --surface: #191D23; --fg: #E5E9EC; --muted: #98A2AA; --line: #2B3139; --tint: #12333B;
+  --go: #5DC58A; --go-bg: #15301F; --warn: #E2AE52; --warn-bg: #382A12; --stop: #EE7769; --stop-bg: #3C1D19; --on-brand: #08181C;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --brand: #25C4DE; --brand-deep: #5CD3E7; --bg: #101317; --surface: #191D23; --fg: #E5E9EC; --muted: #98A2AA; --line: #2B3139; --tint: #12333B;
+  --go: #5DC58A; --go-bg: #15301F; --warn: #E2AE52; --warn-bg: #382A12; --stop: #EE7769; --stop-bg: #3C1D19; --on-brand: #08181C;
+  color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--f-body); font-size: 17px; line-height: 1.55; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+
+.mast { background: var(--ink); color: var(--mast-fg); position: relative; overflow: hidden; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mast::after { content: ""; position: absolute; right: -140px; top: -110px; width: 520px; height: 240px; border: 2px solid rgba(0,170,200,.5); border-radius: 50%; transform: rotate(-14deg); pointer-events: none; }
+.mast-in { max-width: 1120px; margin: 0 auto; padding-block: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; position: relative; z-index: 1; }
+.mark { display: flex; flex-direction: column; line-height: 1; font-family: var(--f-display); color: #fff; text-decoration: none; }
+.mark .w { font-size: 23px; } .mark .w b { font-weight: 800; } .mark .w span { font-weight: 500; }
+.mark .s { font-size: 9px; letter-spacing: .32em; margin-top: 4px; color: #9FDCE7; font-weight: 700; }
+.mast h1 { font-family: var(--f-display); font-weight: 800; font-size: 22px; margin: 0; letter-spacing: -.01em; }
+.mast .sub { color: var(--mast-muted); font-size: 14px; }
+.meter { margin-left: auto; display: flex; align-items: center; gap: 12px; min-width: 0; }
+.meter .bar { width: 160px; max-width: 40vw; height: 8px; border-radius: 99px; background: rgba(255,255,255,.14); overflow: hidden; }
+.meter .fill { height: 100%; background: var(--brand); width: 0; transition: width .4s ease; }
+.meter .lbl { font-size: 14px; color: var(--mast-muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.meter .lbl b { color: #fff; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 64px; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 28px; }
+.rail { align-self: start; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); display: grid; gap: 4px; }
+.rail .rh { font-family: var(--f-display); font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin: 4px 0 6px 10px; font-weight: 700; }
+.navbtn { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; background: none; border: 0; border-radius: 8px; padding: 9px 10px; cursor: pointer; font-size: 15.5px; }
+.navbtn:hover { background: var(--tint); }
+.navbtn.on { background: var(--tint); font-weight: 700; }
+.navbtn .dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--line); flex: none; display: grid; place-items: center; font-size: 12px; font-weight: 700; color: var(--muted); font-family: var(--f-display); }
+.navbtn.done .dot { background: var(--go); border-color: var(--go); color: var(--on-brand); }
+.navbtn.done .dot::after { content: ""; width: 5px; height: 9px; border: solid var(--on-brand); border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px,-1px); }
+.navbtn.done .dot span { display: none; }
+.rail hr { border: 0; border-top: 1px solid var(--line); margin: 8px 0; }
+
+main { min-width: 0; }
+.stage { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.stage-h { padding: 20px 26px 16px; border-bottom: 1px solid var(--line); }
+.eyebrow { font-family: var(--f-display); font-weight: 700; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--brand-deep); }
+h2 { font-family: var(--f-display); font-weight: 800; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.15; margin: 4px 0 0; text-wrap: balance; letter-spacing: -.01em; }
+h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0 0 8px; text-wrap: balance; }
+.steps { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
+.steps span { font-size: 13px; padding: 3px 10px; border-radius: 99px; background: var(--bg); color: var(--muted); font-weight: 600; }
+.steps span.on { background: var(--ink); color: #fff; }
+.steps span.past { background: var(--tint); color: var(--brand-deep); }
+.stage-b { padding: 24px 26px; display: grid; gap: 16px; }
+.stage-b p { margin: 0; max-width: 64ch; }
+.stage-f { padding: 14px 26px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; align-items: center; background: var(--bg); flex-wrap: wrap; }
+.muted { color: var(--muted); }
+
+.btn { border: 0; border-radius: 10px; padding: 11px 20px; font-weight: 700; cursor: pointer; background: var(--ink); color: #fff; font-size: 16px; }
+.btn.brand { background: var(--brand-deep); color: var(--on-brand); }
+.btn.ghost { background: transparent; color: var(--fg); border: 1px solid var(--line); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; }
+.lcard { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; background: var(--surface); display: grid; gap: 6px; align-content: start; }
+.lcard .k { font-family: var(--f-display); font-weight: 800; font-size: 26px; width: 44px; height: 44px; border-radius: 9px; display: grid; place-items: center; background: var(--ink); color: var(--brand); }
+.lcard b { font-family: var(--f-display); font-size: 17px; }
+.lcard small { color: var(--muted); font-size: 14.5px; }
+.callout { background: var(--tint); border-radius: 10px; padding: 12px 16px; max-width: 68ch; }
+.callout b { font-family: var(--f-display); }
+
+.prompt { font-size: 19px; font-weight: 600; max-width: 62ch; }
+.quote { font-size: 19px; border-left: 4px solid var(--brand); padding: 6px 0 6px 16px; font-style: italic; max-width: 62ch; }
+.ctx { font-size: 14.5px; color: var(--muted); }
+.choices { display: grid; gap: 10px; }
+.choices.row { grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); }
+.choice { text-align: left; border: 2px solid var(--line); background: var(--surface); border-radius: 12px; padding: 13px 16px; cursor: pointer; font-size: 16.5px; line-height: 1.4; transition: border-color .15s, background .15s; }
+.choice:hover:not(:disabled) { border-color: var(--brand); }
+.choice:disabled { cursor: default; }
+.choice.right { border-color: var(--go); background: var(--go-bg); }
+.choice.wrong { border-color: var(--stop); background: var(--stop-bg); }
+.choice.sel { border-color: var(--brand-deep); background: var(--tint); }
+.choice.dim { opacity: .55; }
+.fb { border-radius: 10px; padding: 12px 16px; font-size: 16px; max-width: 68ch; }
+.fb.ok { background: var(--go-bg); } .fb.ok b { color: var(--go); }
+.fb.no { background: var(--stop-bg); } .fb.no b { color: var(--stop); }
+.counter { font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.order { display: grid; gap: 8px; }
+.order .slot { display: flex; align-items: center; gap: 12px; border: 2px dashed var(--line); border-radius: 12px; padding: 10px 14px; min-height: 50px; }
+.order .slot.filled { border-style: solid; border-color: var(--go); background: var(--go-bg); }
+.order .slot .n { font-family: var(--f-display); font-weight: 800; color: var(--brand-deep); width: 22px; }
+
+.flash { perspective: 900px; }
+.fcard { position: relative; min-height: 170px; cursor: pointer; border: 0; background: none; width: 100%; padding: 0; }
+.fcard .face { position: absolute; inset: 0; border-radius: 14px; padding: 22px; display: grid; place-items: center; text-align: center; backface-visibility: hidden; transition: transform .45s ease; border: 1px solid var(--line); }
+.fcard .front { background: var(--ink); color: #fff; font-size: 20px; font-weight: 600; }
+.fcard .back { background: var(--tint); transform: rotateY(180deg); font-size: 17px; }
+.fcard.flip .front { transform: rotateY(180deg); } .fcard.flip .back { transform: rotateY(360deg); }
+.frow { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.calc { display: grid; gap: 10px; }
+.crow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+.crow .t { font-weight: 600; } .crow .t small { display: block; font-weight: 400; color: var(--muted); font-size: 14px; }
+.stepper { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.stepper button { border: 0; background: var(--bg); width: 40px; height: 40px; font-size: 20px; cursor: pointer; }
+.stepper output { width: 44px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.yn { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.yn button { border: 0; background: var(--bg); padding: 0 16px; height: 40px; cursor: pointer; font-weight: 600; }
+.yn button.on { background: var(--brand-deep); color: var(--on-brand); }
+.score { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 16px; border-radius: 12px; background: var(--bg); }
+.score .big { font-family: var(--f-display); font-weight: 800; font-size: 44px; line-height: 1; font-variant-numeric: tabular-nums; }
+.pill { display: inline-block; font-family: var(--f-display); font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; padding: 5px 12px; border-radius: 99px; }
+.pill.g { background: var(--go-bg); color: var(--go); } .pill.y { background: var(--warn-bg); color: var(--warn); } .pill.r { background: var(--stop-bg); color: var(--stop); } .pill.n { background: var(--line); color: var(--muted); }
+
+.home-hero { display: grid; gap: 10px; padding: 26px; }
+.home-hero p { max-width: 62ch; margin: 0; }
+.mods { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; padding: 0 26px 26px; }
+.mod { text-align: left; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 16px; cursor: pointer; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; align-items: start; }
+.mod:hover { border-color: var(--brand); }
+.mod .num { grid-row: span 2; font-family: var(--f-display); font-weight: 800; font-size: 20px; width: 40px; height: 40px; border-radius: 9px; display: grid; place-items: center; background: var(--tint); color: var(--brand-deep); }
+.mod.done .num { background: var(--go); color: var(--on-brand); }
+.mod b { font-family: var(--f-display); font-size: 17px; }
+.mod small { color: var(--muted); font-size: 14.5px; }
+.mod .state { grid-column: 2; font-size: 13px; font-weight: 700; color: var(--brand-deep); }
+.mod.done .state { color: var(--go); }
+
+.tools { display: grid; gap: 22px; }
+.tool { border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 12px; }
+.ntab { display: grid; gap: 8px; }
+.ntab .r { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+.ypn { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.ypn button { border: 0; background: var(--bg); padding: 0 12px; height: 38px; cursor: pointer; font-weight: 600; font-size: 15px; }
+.ypn button.on.yes { background: var(--go); color: var(--on-brand); }
+.ypn button.on.partly { background: var(--warn); color: var(--on-brand); }
+.ypn button.on.no { background: var(--stop); color: var(--on-brand); }
+.ten { margin: 0; padding-left: 22px; display: grid; gap: 4px; }
+.ten li::marker { color: var(--brand-deep); font-weight: 700; }
+.toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 99px; font-weight: 600; font-size: 15px; z-index: 20; }
+.badge { display: grid; place-items: center; text-align: center; gap: 10px; padding: 30px 20px; }
+.badge .seal { width: 96px; height: 96px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; color: var(--brand); font-family: var(--f-display); font-weight: 800; font-size: 34px; border: 4px solid var(--brand); }
+.checklist { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; max-width: 60ch; text-align: left; }
+.checklist li { display: flex; gap: 10px; } .checklist li::before { content: ""; flex: none; width: 18px; height: 18px; border: 2px solid var(--brand-deep); border-radius: 4px; margin-top: 3px; }
+
+@media (max-width: 820px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-block: 16px 56px; }
+  .rail { position: static; grid-auto-flow: column; grid-auto-columns: max-content; overflow-x: auto; padding-bottom: 4px; }
+  .rail .rh, .rail hr { display: none; }
+  .navbtn { font-size: 14.5px; }
+  .meter { margin-left: 0; width: 100%; }
+  .meter .bar { flex: 1; width: auto; max-width: none; }
+  .stage-h, .stage-b, .stage-f { padding-left: 18px; padding-right: 18px; }
+  .home-hero { padding: 20px 18px; } .mods { padding: 0 18px 20px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-in">
+    <a class="mark" href="#home" aria-label="BorderLAN Cybersecurity, home"><span class="w"><span>Border</span><b>LAN</b></span><span class="s">CYBERSECURITY</span></a>
+    <div><h1>Sales Habits 2026</h1><div class="sub">Interactive training</div></div>
+    <div class="meter" aria-live="polite"><div class="bar"><div class="fill" id="meterFill"></div></div><div class="lbl" id="meterLbl"><b>0</b> of 7 modules</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="rail" id="rail" aria-label="Training modules"></nav>
+  <main id="main"></main>
+</div>
+
+<script>
+(function () {
+  // ---------- content ----------
+  const NTAB = ['Need', 'Timeline', 'Authority', 'Budget'];
+  const ch = (t, ok, why) => ({ t, ok: !!ok, why });
+
+  const MODULES = [
+    { id: 'm1', title: 'Four questions', blurb: 'Is it a real opportunity? Need, Timeline, Authority, Budget.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'Ask the need first', body: `
+        <p>Every new conversation needs answers to four questions. Ask about the need first. If there is no need, the other three do not matter.</p>
+        <div class="cards">
+          <div class="lcard"><span class="k">N</span><b>Need</b><span>Do they have a problem we solve?</span><small>Phishing or ransomware scare, failed audit, cyber insurance requirements, web filtering, nobody watching alerts at night, old firewall, untested backups.</small></div>
+          <div class="lcard"><span class="k">T</span><b>Timeline</b><span>Is there a date that matters?</span><small>Insurance renewal, contract ending, an audit, the new school year, a board meeting, fiscal year start (often July 1 for school districts).</small></div>
+          <div class="lcard"><span class="k">A</span><b>Authority</b><span>Who else decides?</span><small>IT director, superintendent, business manager or CFO, owner, the board, purchasing.</small></div>
+          <div class="lcard"><span class="k">B</span><b>Budget</b><span>Is money set aside, or can it be?</span><small>A line item, renewing a tool they already pay for, grant money, an approved project.</small></div>
+        </div>` },
+      { kind: 'pick', label: 'Practice', title: 'Which question does this answer?', intro: 'Read what the prospect said. Pick the question it answers.', row: true, items: [
+        { quote: 'We got hit with a phishing email last spring and two staff clicked it.', choices: NTAB.map(n => ch(n, n === 'Need', n === 'Need' ? 'A real incident is a problem we solve.' : 'This is about the problem itself, so it answers Need.')) },
+        { quote: 'Anything over $25,000 has to go to the board.', choices: NTAB.map(n => ch(n, n === 'Authority', n === 'Authority' ? 'The board signs off, so you now know who else decides.' : 'This tells you who approves, so it answers Authority.')) },
+        { quote: 'We have to have this in place before the new school year.', choices: NTAB.map(n => ch(n, n === 'Timeline', n === 'Timeline' ? 'A start date with a reason behind it is a timeline.' : 'This is a date that matters, so it answers Timeline.')) },
+        { quote: 'We set money aside for security in next year’s budget.', choices: NTAB.map(n => ch(n, n === 'Budget', n === 'Budget' ? 'Money is set aside, so Budget is Yes.' : 'This is about money being set aside, so it answers Budget.')) },
+        { quote: 'I’d have to loop in our business manager, Linda.', choices: NTAB.map(n => ch(n, n === 'Authority', n === 'Authority' ? 'Linda is part of the decision. Ask to meet her.' : 'Another person in the decision means Authority.')) },
+        { quote: 'Honestly, nobody watches our firewall alerts after 5 p.m.', choices: NTAB.map(n => ch(n, n === 'Need', n === 'Need' ? 'A gap in coverage is a problem we solve with 24/7 monitoring.' : 'This is a gap in their security, so it answers Need.')) },
+        { quote: 'Our cyber insurance renews in June and they want backups tested.', choices: NTAB.map(n => ch(n, n === 'Timeline' || n === 'Need', n === 'Timeline' ? 'Right. The June renewal is a date that matters. It also hints at a Need.' : n === 'Need' ? 'Right. Untested backups are a Need, and June gives you the Timeline too.' : 'Listen for the date and the requirement: June renewal and tested backups.')) },
+      ] },
+      { kind: 'pick', label: 'Practice', title: 'Score the deal', intro: 'Green: Need is Yes and at least two others are Yes. Yellow: Need is there, the others are not yet. Red: Need is No.', row: true, items: [
+        { prompt: 'Need: Yes. Timeline: Yes. Authority: Partly. Budget: Yes.', choices: [ch('Green', 1, 'Need is Yes and two others are Yes. Book the next meeting.'), ch('Yellow', 0, 'Count again: Need is Yes, and Timeline and Budget are Yes. That is Green.'), ch('Red', 0, 'Red is only when Need is No.')] },
+        { prompt: 'Need: Partly. Timeline: Yes. Authority: Yes. Budget: Yes.', choices: [ch('Green', 0, 'Green needs Need to be a clear Yes. Keep asking about the problem.'), ch('Yellow', 1, 'Right. Everything else is there, but the need is not clear yet. Dig into it.'), ch('Red', 0, 'Need is Partly, not No, so it is still alive.')] },
+        { prompt: 'Need: No. Timeline: Yes. Authority: Yes. Budget: Yes.', choices: [ch('Green', 0, 'Without a need, nothing else matters.'), ch('Yellow', 0, 'Need is No, so this is Red.'), ch('Red', 1, 'Right. Thank them, set a check-in a few months out, and move on.')] },
+        { prompt: 'Need: Yes. Timeline: No. Authority: Partly. Budget: Partly.', choices: [ch('Green', 0, 'Only Need is a Yes. Green needs two more.'), ch('Yellow', 1, 'Right. Your next step is to find the date that matters.'), ch('Red', 0, 'Need is Yes, so it is not Red.')] },
+      ] },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'Which question do you ask first?', choices: [ch('Budget', 0, 'Budget comes later. Without a need, there is nothing to fund.'), ch('Need', 1, 'Right. If there is no need, the other three do not matter.'), ch('Authority', 0, 'Authority matters, but need comes first.')] },
+        { prompt: 'A prospect says: "Send me something and I’ll pass it to my boss." Which question is still open?', choices: [ch('Need', 0, 'The boss is the clue here.'), ch('Authority', 1, 'Right. Ask to set up a call with the boss and them.'), ch('Timeline', 0, 'The boss is the clue: that is Authority.')] },
+        { prompt: 'What makes a deal Green?', choices: [ch('All four are Yes', 0, 'Close, but Green only needs Need plus two others.'), ch('Need is Yes and two others are Yes', 1, 'Right.'), ch('Budget is Yes', 0, 'Budget alone is not enough.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'On every new call, I will ask about the need first and log Need, Timeline, Authority, and Budget as Yes, Partly, or No.' },
+    ] },
+
+    { id: 'm2', title: 'The call in five steps', blurb: 'Open, ask, listen, confirm, set the next step. Practice on a real call.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'Same five steps, every call', body: `
+        <p>Use these five steps on cold calls, first meetings, and follow-ups.</p>
+        <div class="cards">
+          <div class="lcard"><span class="k">1</span><b>Open</b><small>About 30 seconds. Who you are, why you called, ask for a few minutes.</small></div>
+          <div class="lcard"><span class="k">2</span><b>Ask</b><small>Most of the call. Three to five questions, one at a time. Then stop talking.</small></div>
+          <div class="lcard"><span class="k">3</span><b>Listen and write it down</b><small>Their words, not yours.</small></div>
+          <div class="lcard"><span class="k">4</span><b>Confirm</b><small>"So what I heard is... did I get that right?"</small></div>
+          <div class="lcard"><span class="k">5</span><b>Set the next step</b><small>Date, time, and who. Send the invite before you hang up.</small></div>
+        </div>` },
+      { kind: 'order', label: 'Practice', title: 'Put the call in order', intro: 'Tap the steps in the order you would do them.', items: ['Open', 'Ask', 'Listen and write it down', 'Confirm', 'Set the next step'] },
+      { kind: 'pick', label: 'Practice', title: 'Live call: Valley Unified', intro: 'You are calling Dana Ruiz, IT Director at a school district. Pick what you would say at each step.', sim: true, items: [
+        { ctx: 'Step 1: Open', quote: '"This is Dana."', choices: [
+          ch('"Hi Dana, this is Sam with BorderLAN. We help school districts in the area protect their networks from ransomware. Do you have a few minutes?"', 1, 'Short, clear, and you asked permission. That is a good open.'),
+          ch('"Hi Dana! Is now a good time to walk you through BorderLAN’s full product portfolio?"', 0, 'Nobody wants a product tour from a stranger. Give a reason that matters to her, then ask for a few minutes.'),
+          ch('"I’m calling to see if you’d like a demo of our managed firewall."', 0, 'That is a pitch in the first sentence. Open with who you are and why, then ask.') ] },
+        { ctx: 'Step 2: Ask', quote: '"I’ve got a few minutes. What’s this about?"', choices: [
+          ch('"We offer 24/7 monitoring, web filtering, backup, and email security. Which do you need?"', 0, 'That is a menu, not a question. Learn about her first.'),
+          ch('"Before I tell you about us, how do you handle security today, and who does it?"', 1, 'An open question about her world. Now stop talking and listen.'),
+          ch('"Are you happy with your current setup?"', 0, 'A yes or no question usually gets "yes" and ends the call.') ] },
+        { ctx: 'Step 3: Listen', quote: '"Honestly, it’s me and one tech. We had a phishing scare in March, and our insurance renewal in June is asking for more."', choices: [
+          ch('"Our email security would stop that. Let me explain how it works."', 0, 'You jumped to a pitch. She just gave you two great threads to pull.'),
+          ch('"Got it. So what’s your budget?"', 0, 'Too fast. Learn more about the problem before money.'),
+          ch('"Tell me more about the phishing scare. What happened?"', 1, 'The best information comes from the second question. Write down her exact words.') ] },
+        { ctx: 'Step 4: Confirm', quote: 'She explains that two staff clicked the link and it took a week to clean up.', choices: [
+          ch('"So what I heard is: it’s you and one tech, a phishing scare in March that took a week to clean up, and an insurance renewal in June asking for more. Did I get that right?"', 1, 'Playing it back in her words shows you listened and checks your notes.'),
+          ch('"Sounds like you need pretty much everything we sell."', 0, 'That makes it about you. Play back what she said instead.'),
+          ch('"OK, great."', 0, 'You skipped the confirm. Say it back so she can correct you.') ] },
+        { ctx: 'Step 5: Next step', quote: '"Yes, that’s it. Can you send me some info?"', choices: [
+          ch('"Sure, I’ll email you a brochure today."', 0, 'A brochure with no date usually goes nowhere.'),
+          ch('"Happy to. Can we go over it together with you and your business manager next Tuesday at 10?"', 1, 'A date, a time, and the right people. Send the invite now.'),
+          ch('"No problem. Call me if you have questions."', 0, 'That hands the next step to her. Keep it in your hands.') ] },
+      ] },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'How long should the open take?', choices: [ch('About 30 seconds', 1, 'Right. Who you are, why you called, ask for time.'), ch('Two to three minutes', 0, 'Too long. Get to the questions.'), ch('As long as it takes to explain our products', 0, 'Products come later, if at all, on a first call.')] },
+        { prompt: 'When do you talk about products?', choices: [ch('Right after the open', 0, 'Ask first.'), ch('After you have asked questions and confirmed what you heard', 1, 'Right. Then you know what matters to them.'), ch('Only if they ask twice', 0, 'You can talk about products once you know the problem.')] },
+        { prompt: 'What do you do before you hang up?', choices: [ch('Promise to follow up', 0, 'A promise is not a next step.'), ch('Send the calendar invite', 1, 'Right. Date, time, and who, sent while you are still on the phone.'), ch('Thank them for their time', 0, 'Be polite, but set the next step first.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'I will use the five steps on every call this week: open, ask, listen, confirm, and set the next step.' },
+    ] },
+
+    { id: 'm3', title: 'Ask before you pitch', blurb: 'Three questions before any product talk. Learn the ten.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'Three questions, then products', body: `
+        <p>Ask at least three questions before you talk about a product. Good questions start with how, what, or tell me about. They cannot be answered with yes or no.</p>
+        <div class="callout"><b>Two follow-ups that always work.</b> "Tell me more about that." and "What did that cost you?" The best information comes from the second question, not the first.</div>` },
+      { kind: 'pick', label: 'Practice', title: 'Pick the better question', intro: 'Tap the question that will get you more information.', items: [
+        { prompt: 'You want to learn about backups.', choices: [ch('"Do you have backups?"', 0, 'Yes or no. They will say yes and you learn nothing.'), ch('"How do you handle backups today, and when did you last test a restore?"', 1, 'Open, and the second half shows whether the backups actually work.')] },
+        { prompt: 'You want to know how serious ransomware would be.', choices: [ch('"If you were hit with ransomware tomorrow, how long would it take to get back up and running?"', 1, 'This makes the cost real for them.'), ch('"Are you worried about ransomware?"', 0, 'Everyone says yes. It tells you nothing new.')] },
+        { prompt: 'You want to find their priorities.', choices: [ch('"Is security a priority for you?"', 0, 'Nobody says no to this.'), ch('"What’s at the top of your IT list this year?"', 1, 'You learn what they actually care about.')] },
+        { prompt: 'You want to know who decides.', choices: [ch('"Who else would weigh in on a decision like this?"', 1, 'This names the people without putting your contact on the spot.'), ch('"Are you the decision maker?"', 0, 'Most people say yes even when they are not.')] },
+        { prompt: 'You want to understand budget.', choices: [ch('"Do you have a budget?"', 0, 'A blunt yes or no. Often "not really."'), ch('"How do purchases like this usually get paid for?"', 1, 'You learn the process, not just yes or no.')] },
+        { prompt: 'You want a next step.', choices: [ch('"Would you like to see a demo?"', 0, 'Easy to say no to.'), ch('"What would you need to see from us to take the next step?"', 1, 'They tell you exactly what to bring.')] },
+      ] },
+      { kind: 'flash', label: 'Practice', title: 'The ten questions', intro: 'Tap a card to see which of the four it answers. Learn these and you can run almost any first call.', items: [
+        ['What made you take this call today?', 'Why now. It tells you what is on their mind.'],
+        ['How do you handle security today, and who does it?', 'Need. You learn their setup and the people.'],
+        ['What worries you most about your network or your data?', 'Need.'],
+        ['Have you had a scare in the last year, like phishing, ransomware, or an outage? What happened?', 'Need. Real incidents are the strongest need.'],
+        ['If you were hit tomorrow, how long would it take to get back up and running?', 'Need. It puts a cost on the problem.'],
+        ['What does your cyber insurance carrier ask you to have in place?', 'Timeline. Renewals come with dates and requirements.'],
+        ['Is there a date coming up that matters, like a renewal, an audit, or a new school year?', 'Timeline.'],
+        ['Who else would weigh in on a decision like this?', 'Authority.'],
+        ['How do purchases like this usually get paid for?', 'Budget.'],
+        ['What would you need to see from us to take the next step?', 'The next step.'],
+      ] },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'How many questions do you ask before talking about a product?', choices: [ch('One', 0, 'Not enough to know what matters.'), ch('At least three', 1, 'Right.'), ch('Ten', 0, 'You can ask ten, but three is the minimum.')] },
+        { prompt: 'Which one is an open question?', choices: [ch('"Do you use a firewall?"', 0, 'Yes or no.'), ch('"Tell me about your network setup."', 1, 'Right. They have to explain.'), ch('"Is your firewall new?"', 0, 'Yes or no.')] },
+        { prompt: 'They say "We had an outage last year." What do you say next?', choices: [ch('"Our backup product prevents that."', 0, 'That is a pitch. Dig in first.'), ch('"What did that cost you?"', 1, 'Right. Now you learn how big the problem is.'), ch('"OK. Next question..."', 0, 'You walked past the best part of the call.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'I will ask at least three questions before I talk about any product, on every call.' },
+    ] },
+
+    { id: 'm4', title: 'Next step on every call', blurb: 'A call without a next step is a call that did not happen.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'Date, time, and who', body: `
+        <p>A next step has three parts: a date, a time, and who will be there. "I’ll follow up" is not a next step. Put it on the calendar while you are still on the phone.</p>
+        <div class="callout"><b>Weak:</b> "Send me some info." <b>Strong:</b> "I’ll send it now. Can we review it together Thursday at 2?"</div>` },
+      { kind: 'pick', label: 'Practice', title: 'Pick the strongest next step', intro: 'The prospect says something. Pick the best reply.', items: [
+        { quote: '"Just send me some info."', choices: [ch('"Will do. I’ll email it over today."', 0, 'No date. This one usually goes quiet.'), ch('"I’ll send it now. Can we go through it together Thursday at 2?"', 1, 'Date, time, and a reason to meet.'), ch('"OK, let me know what you think."', 0, 'That hands control to them.')] },
+        { quote: '"Call me next month."', choices: [ch('"Sounds good, I’ll call you then."', 0, '"Next month" is not a date.'), ch('"Let’s put 15 minutes on November 12 at 9 so it’s on both our calendars."', 1, 'A real date they agreed to.'), ch('"Why not now?"', 0, 'Pushy. Respect the timing and lock in the date.')] },
+        { quote: '"I need to talk to my boss first."', choices: [ch('"Can we set up a call with your boss and you next week? I can answer their questions directly."', 1, 'You get to the person who decides.'), ch('"No problem, let me know what they say."', 0, 'Now your deal depends on someone else’s retelling.'), ch('"Who is your boss?"', 0, 'Good to know, but get the meeting.')] },
+        { quote: '"We’re not ready yet."', choices: [ch('"Understood. When would be a better time? Let’s put a check-in on the calendar for then."', 1, 'You respect the no and still set a date.'), ch('"OK, thanks for your time."', 0, 'That ends the relationship.'), ch('"Prices go up next quarter."', 0, 'Pressure with no reason to meet.')] },
+        { quote: 'At the end of a demo: "This looks good."', choices: [ch('"Great! Let me know when you’re ready."', 0, 'You just lost the momentum.'), ch('"Glad it fits. Can we meet Tuesday at 10 with your business manager to walk through pricing?"', 1, 'You move the deal forward with the right person.'), ch('"Thanks, talk soon."', 0, 'No date, no next step.')] },
+      ] },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'Which of these is a real next step?', choices: [ch('"I’ll follow up next week."', 0, 'No date or time.'), ch('"Demo with Dana and her business manager, Tuesday at 10."', 1, 'Right. Date, time, and who.'), ch('"They said to check back later."', 0, 'No date at all.')] },
+        { prompt: 'When do you send the invite?', choices: [ch('Before you hang up', 1, 'Right.'), ch('At the end of the day', 0, 'They may not accept it by then.'), ch('After they email you', 0, 'Keep the next step in your hands.')] },
+        { prompt: 'A prospect says no for now. What do you do?', choices: [ch('Delete the deal', 0, 'Set a check-in instead.'), ch('Set a check-in date and move on', 1, 'Right. Respect the no, keep the door open.'), ch('Call again tomorrow', 0, 'That is pushy.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'Every call I make will end with a date, a time, and who, on the calendar before I hang up.' },
+    ] },
+
+    { id: 'm5', title: 'CRM the same day', blurb: 'Log every call in two minutes. Their words, the four answers, the next step.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'Two minutes, right after the call', body: `
+        <p>If it is not in the CRM, your manager cannot help you with it. Log every call the same day. A good note has four things:</p>
+        <div class="cards">
+          <div class="lcard"><b>Their words</b><small>The problem and why it matters, as they said it.</small></div>
+          <div class="lcard"><b>The four answers</b><small>Need, Timeline, Authority, Budget as Yes, Partly, or No.</small></div>
+          <div class="lcard"><b>The next step</b><small>What, when, and who.</small></div>
+          <div class="lcard"><b>Who else</b><small>Names and titles of other people involved.</small></div>
+        </div>` },
+      { kind: 'pick', label: 'Practice', title: 'Pick the best CRM note', intro: 'You just finished the Valley Unified call from Module 2. Which note would you log?', items: [
+        { prompt: 'Your call with Dana Ruiz, IT Director.', choices: [
+          ch('"Good call. Dana seems interested. Follow up soon."', 0, 'Nothing here helps anyone. No words, no answers, no next step.'),
+          ch('"Dana: ‘phishing scare in March, took a week to clean up.’ Insurance renewal in June wants more. Need Yes, Timeline Yes, Authority Partly (business manager Linda), Budget Partly. Next: review with Dana and Linda, Tue 10 a.m."', 1, 'Their words, the four answers, the next step, and who else. Perfect.'),
+          ch('"Pitched monitoring, filtering, backup, and email security. She liked email security."', 0, 'This is about what you said, not what she said.') ] },
+      ] },
+      { kind: 'multi', label: 'Practice', title: 'What goes in every note?', intro: 'Select everything that belongs in a call note, then check your answer.', items: [
+        ['What they said, in their words', 1], ['The four answers', 1], ['The next step with a date', 1], ['Who else is involved', 1], ['Your opinion of how the call went', 0], ['A list of every product you mentioned', 0] ] },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'When do you log a call?', choices: [ch('Friday afternoon', 0, 'By then you have forgotten the details.'), ch('The same day, right after the call', 1, 'Right.'), ch('Only when the deal is Green', 0, 'Every call gets logged.')] },
+        { prompt: 'Which note uses the customer’s words?', choices: [ch('"Security concerns."', 0, 'Too vague.'), ch('"We got hit with phishing in March."', 1, 'Right. Specific and in their words.'), ch('"Needs our stuff."', 0, 'That is your words, and vague.')] },
+        { prompt: 'Why does the CRM matter?', choices: [ch('So your manager can help you with your deals', 1, 'Right.'), ch('So you look busy', 0, 'It is there to help you win.'), ch('It doesn’t, as long as you remember', 0, 'Nobody remembers everything.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'I will log every call in the CRM the same day: their words, the four answers, the next step, and who else.' },
+    ] },
+
+    { id: 'm6', title: 'Prospect first, plan tomorrow', blurb: 'Protect your first two hours. Pick your top three every evening.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'Own the start of your day', body: `
+        <p><b>Prospect first.</b> Block your first two hours for calls and outreach, five days a week, before you open email.</p>
+        <p><b>Plan tomorrow before you leave today.</b> Take ten minutes to pick your top three accounts and book your first call.</p>
+        <div class="callout"><b>Why it works.</b> Email and admin will fill any hour you give them. Calls happen when you decide in advance when they happen.</div>` },
+      { kind: 'pick', label: 'Practice', title: 'When is your prospecting block?', items: [
+        { prompt: 'Pick the best time for your daily two-hour block.', choices: [ch('8:00 to 10:00 or 9:00 to 11:00, before email', 1, 'Right. Same time every day, before anything else gets in.'), ch('After lunch, when things calm down', 0, 'Afternoons fill up. Protect the morning.'), ch('Whenever I have a gap', 0, 'Gaps rarely come. Put it on the calendar.')] },
+      ] },
+      { kind: 'multi', label: 'Practice', title: 'Plan tomorrow: pick your top three', intro: 'It is 4:45 p.m. Pick the three accounts that matter most tomorrow.', pick: 3, items: [
+        ['Valley USD: demo with Dana and Linda tomorrow at 10. You need to prep.', 1, 'A meeting tomorrow always makes the list.'],
+        ['Harbor Dental: Green deal, next step date was yesterday. It is overdue.', 1, 'An overdue Green deal needs a call first thing.'],
+        ['Coastline Credit Union: insurance renewal in three weeks, Need is Yes, no next step set.', 1, 'A real deadline and no next step. Fix that tomorrow.'],
+        ['Pine Ridge Charter: Red, no need. Check-in set for four months out.', 0, 'This one is handled. Leave it until the check-in.'],
+        ['Metro Logistics: Yellow, next step already set for next month.', 0, 'It has a dated next step. Nothing to do tomorrow.'],
+        ['A list of 200 new cold leads', 0, 'Those go in your prospecting block, not your top three.'] ] },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'What comes first in your morning?', choices: [ch('Email', 0, 'Email can wait two hours.'), ch('Your prospecting block', 1, 'Right.'), ch('Updating your CRM from last week', 0, 'That should already be done the same day.')] },
+        { prompt: 'When do you plan tomorrow?', choices: [ch('Before you leave today', 1, 'Right. Ten minutes, top three, first call booked.'), ch('First thing tomorrow', 0, 'Then planning eats your prospecting block.'), ch('Monday for the whole week', 0, 'Plans change daily. Plan each evening.')] },
+        { prompt: 'Which account belongs in your top three?', choices: [ch('A Red deal with a check-in in four months', 0, 'It is handled.'), ch('A Green deal whose next step is overdue', 1, 'Right.'), ch('A Yellow deal with a next step next month', 0, 'It already has a dated next step.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'I will protect my first two hours for prospecting, and plan my top three accounts before I leave each day.' },
+    ] },
+
+    { id: 'm7', title: 'Friday check and your score', blurb: 'Review your pipeline, score your week, log it in three minutes.', steps: [
+      { kind: 'learn', label: 'Learn', title: 'How your habit score works', body: `
+        <p>Every Friday, check that every open deal has a next step with a date. Then score your week and add one row to the Weekly Log in the Habit Tracker.</p>
+        <div class="cards">
+          <div class="lcard"><b>25 points</b><small>Five daily habits, up to 5 days each.</small></div>
+          <div class="lcard"><b>3 points</b><small>Three weekly habits: Friday pipeline check, 15 minutes with your manager, practice one call.</small></div>
+          <div class="lcard"><b>Your score</b><small>Points out of 28. 85% or higher is a strong week. 60% to 84% is building. Below 60% is a reset.</small></div>
+        </div>` },
+      { kind: 'multi', label: 'Practice', title: 'Friday pipeline check', intro: 'Select every deal that needs a fix before you log off.', items: [
+        ['Harbor Dental: Green, next step "follow up soon"', 1, 'No date. That is not a next step.'],
+        ['Valley USD: Yellow, review with Dana and Linda Tue 10 a.m.', 0, 'Dated, with the right people. Good.'],
+        ['Coastline CU: Green, next step date was last Wednesday', 1, 'Overdue. Call and reset it.'],
+        ['Metro Logistics: Yellow, check-in Nov 12 at 9', 0, 'Dated. Good.'],
+        ['Seaside Clinic: no next step at all', 1, 'Every open deal needs one.'] ] },
+      { kind: 'calc', label: 'Practice', title: 'Score a sample week', intro: 'Try the score with your own week. Enter how many days you did each habit.' },
+      { kind: 'pick', label: 'Check', title: 'Quick check', quiz: true, items: [
+        { prompt: 'What does the habit score measure?', choices: [ch('How many deals you closed', 0, 'We score the habit, not the outcome.'), ch('Whether you did the habits', 1, 'Right. Do the habits and the results follow.'), ch('How many calls you made', 0, 'Calls count in conversations, not the score.')] },
+        { prompt: 'Your score is 72%. What does that mean?', choices: [ch('Strong week', 0, 'Strong is 85% or higher.'), ch('Building. Pick the habit you missed most and focus on it', 1, 'Right.'), ch('Reset', 0, 'Reset is below 60%.')] },
+        { prompt: 'Where do you log your week?', choices: [ch('The Weekly Log in the Habit Tracker', 1, 'Right. One row, every Friday.'), ch('An email to your manager', 0, 'Use the tracker so the Team Summary works.'), ch('Nowhere, just remember it', 0, 'Log it.')] },
+      ] },
+      { kind: 'commit', label: 'Commit', habit: 'Every Friday I will check my pipeline, score my week, and log it in the Habit Tracker.' },
+    ] },
+  ];
+
+  // ---------- state ----------
+  const KEY = 'bl-habits-2026';
+  let S = { done: {}, quiz: {}, pos: {} };
+  try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign(S, JSON.parse(raw)); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+  const $ = (s, el = document) => el.querySelector(s);
+  const h = (tag, attrs = {}, html) => { const e = document.createElement(tag); for (const k in attrs) { if (k === 'class') e.className = attrs[k]; else if (k.startsWith('on')) e.addEventListener(k.slice(2), attrs[k]); else e.setAttribute(k, attrs[k]); } if (html !== undefined) e.innerHTML = html; return e; };
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  function toast(msg) { const t = h('div', { class: 'toast', role: 'status' }, esc(msg)); document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
+
+  const doneCount = () => MODULES.filter(m => S.done[m.id]).length;
+  function meter() {
+    const n = doneCount();
+    $('#meterFill').style.width = (n / MODULES.length * 100) + '%';
+    $('#meterLbl').innerHTML = `<b>${n}</b> of ${MODULES.length} modules`;
+  }
+
+  // ---------- rail ----------
+  function rail(active) {
+    const r = $('#rail'); r.innerHTML = '';
+    const nb = (id, label, num, done) => { const b = h('button', { class: 'navbtn' + (active === id ? ' on' : '') + (done ? ' done' : ''), type: 'button', onclick: () => go(id) }, `<span class="dot"><span>${num}</span></span><span>${esc(label)}</span>`); if (active === id) b.setAttribute('aria-current', 'page'); return b; };
+    r.appendChild(h('div', { class: 'rh' }, 'Start'));
+    r.appendChild(nb('home', 'Overview', '•', false));
+    r.appendChild(h('div', { class: 'rh' }, 'Modules'));
+    MODULES.forEach((m, i) => r.appendChild(nb(m.id, m.title, i + 1, S.done[m.id])));
+    r.appendChild(h('hr'));
+    r.appendChild(nb('tools', 'Tools for every day', 'T', false));
+    r.appendChild(nb('finish', 'Mock call ready', '★', doneCount() === MODULES.length));
+  }
+
+  // ---------- views ----------
+  function home() {
+    const main = $('#main'); main.innerHTML = '';
+    const st = h('section', { class: 'stage' });
+    const n = doneCount();
+    const next = MODULES.find(m => !S.done[m.id]);
+    st.appendChild(h('div', { class: 'home-hero' }, `
+      <span class="eyebrow">How we sell at BorderLAN</span>
+      <h2>Small habits, done every day, win deals.</h2>
+      <p>Seven short modules, about ten minutes each. Every module has a quick lesson, a practice round with real BorderLAN situations, a three-question check, and one habit to commit to. Your progress saves on this device.</p>
+      <div>${next ? `<button class="btn brand" type="button" id="startBtn">${n ? 'Continue: ' + esc(next.title) : 'Start Module 1'}</button>` : `<button class="btn brand" type="button" id="startBtn">You finished. See your mock call checklist</button>`}</div>`));
+    const grid = h('div', { class: 'mods' });
+    MODULES.forEach((m, i) => {
+      const q = S.quiz[m.id];
+      const state = S.done[m.id] ? `Done${q ? ` · check ${q[0]}/${q[1]}` : ''}` : (S.pos[m.id] ? 'In progress' : 'Not started');
+      grid.appendChild(h('button', { class: 'mod' + (S.done[m.id] ? ' done' : ''), type: 'button', onclick: () => go(m.id) }, `<span class="num">${i + 1}</span><b>${esc(m.title)}</b><small>${esc(m.blurb)}</small><span class="state">${state}</span>`));
+    });
+    st.appendChild(grid);
+    main.appendChild(st);
+    $('#startBtn').addEventListener('click', () => go(next ? next.id : 'finish'));
+  }
+
+  function moduleView(m) {
+    const main = $('#main'); main.innerHTML = '';
+    let idx = Math.min(S.pos[m.id] || 0, m.steps.length - 1);
+    const st = h('section', { class: 'stage' });
+    main.appendChild(st);
+    const num = MODULES.indexOf(m) + 1;
+    function draw() {
+      S.pos[m.id] = idx; save();
+      const step = m.steps[idx];
+      st.innerHTML = '';
+      const head = h('div', { class: 'stage-h' });
+      head.innerHTML = `<span class="eyebrow">Module ${num} · ${esc(step.label)}</span><h2>${esc(step.title || (step.kind === 'commit' ? 'Commit to the habit' : m.title))}</h2>`;
+      const dots = h('div', { class: 'steps', 'aria-hidden': 'true' });
+      m.steps.forEach((s, i) => dots.appendChild(h('span', { class: i === idx ? 'on' : (i < idx ? 'past' : '') }, esc(s.label))));
+      head.appendChild(dots);
+      st.appendChild(head);
+      const body = h('div', { class: 'stage-b' });
+      st.appendChild(body);
+      const foot = h('div', { class: 'stage-f' });
+      const back = h('button', { class: 'btn ghost', type: 'button', onclick: () => { if (idx > 0) { idx--; draw(); } else go('home'); } }, idx > 0 ? 'Back' : 'All modules');
+      const nextBtn = h('button', { class: 'btn brand', type: 'button' }, idx === m.steps.length - 1 ? 'Finish module' : 'Next');
+      foot.append(back, nextBtn);
+      st.appendChild(foot);
+      const ready = ok => { nextBtn.disabled = !ok; };
+      nextBtn.addEventListener('click', () => {
+        if (idx < m.steps.length - 1) { idx++; draw(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        else { S.done[m.id] = true; S.pos[m.id] = 0; save(); meter(); toast(`Module ${num} complete`); const nx = MODULES.find(x => !S.done[x.id]); go(nx ? nx.id : 'finish'); }
+      });
+      RENDER[step.kind](step, body, ready, m);
+    }
+    draw();
+  }
+
+  const RENDER = {
+    learn(step, body, ready) { body.innerHTML = step.body; ready(true); },
+
+    pick(step, body, ready, m) {
+      let i = 0, right = 0;
+      ready(false);
+      if (step.intro) body.appendChild(h('p', { class: 'muted' }, esc(step.intro)));
+      const box = h('div', { style: 'display:grid;gap:14px' }); body.appendChild(box);
+      function item() {
+        const it = step.items[i]; box.innerHTML = '';
+        box.appendChild(h('div', { class: 'counter' }, `${step.quiz ? 'Question' : step.sim ? 'Moment' : 'Item'} ${i + 1} of ${step.items.length}`));
+        if (it.ctx) box.appendChild(h('div', { class: 'eyebrow' }, esc(it.ctx)));
+        if (it.quote) box.appendChild(h('div', { class: 'quote' }, esc(it.quote)));
+        if (it.prompt) box.appendChild(h('div', { class: 'prompt' }, esc(it.prompt)));
+        const cs = h('div', { class: 'choices' + (step.row && it.choices.length <= 4 && it.choices.every(c => c.t.length < 16) ? ' row' : '') });
+        const fb = h('div', { 'aria-live': 'polite' });
+        it.choices.forEach(c => {
+          const b = h('button', { class: 'choice', type: 'button' }, esc(c.t));
+          b.addEventListener('click', () => {
+            [...cs.children].forEach(x => { x.disabled = true; });
+            b.classList.add(c.ok ? 'right' : 'wrong');
+            if (!c.ok) it.choices.forEach((o, k) => { if (o.ok) cs.children[k].classList.add('right'); else if (cs.children[k] !== b) cs.children[k].classList.add('dim'); });
+            else it.choices.forEach((o, k) => { if (cs.children[k] !== b && !o.ok) cs.children[k].classList.add('dim'); });
+            if (c.ok) right++;
+            fb.className = 'fb ' + (c.ok ? 'ok' : 'no');
+            fb.innerHTML = `<b>${c.ok ? 'Nice.' : 'Not quite.'}</b> ${esc(c.why || '')}`;
+            const last = i === step.items.length - 1;
+            const nb = h('button', { class: 'btn', type: 'button', style: 'justify-self:start' }, last ? 'See result' : (step.sim ? 'Next moment' : 'Next'));
+            nb.addEventListener('click', () => { if (!last) { i++; item(); } else result(); });
+            box.appendChild(nb); nb.focus({ preventScroll: true });
+          });
+          cs.appendChild(b);
+        });
+        box.append(cs, fb);
+      }
+      function result() {
+        box.innerHTML = '';
+        const total = step.items.length;
+        if (step.quiz) { S.quiz[m.id] = [right, total]; save(); }
+        const good = right / total >= 0.67;
+        box.appendChild(h('div', { class: 'score' }, `<span class="big">${right}/${total}</span><div><span class="pill ${good ? 'g' : 'y'}">${good ? 'Well done' : 'Keep practicing'}</span><p style="margin:6px 0 0">${good ? (step.sim ? 'That call ends with a meeting on the calendar.' : 'You have this one.') : 'Try it again, or move on and come back later.'}</p></div>`));
+        const again = h('button', { class: 'btn ghost', type: 'button', style: 'justify-self:start' }, 'Try again');
+        again.addEventListener('click', () => { i = 0; right = 0; ready(false); item(); });
+        box.appendChild(again);
+        ready(true);
+      }
+      item();
+    },
+
+    order(step, body, ready) {
+      ready(false);
+      body.appendChild(h('p', { class: 'muted' }, esc(step.intro)));
+      const slots = h('div', { class: 'order' });
+      const pool = h('div', { class: 'choices' });
+      const fb = h('div', { 'aria-live': 'polite' });
+      let placed = 0;
+      const shuffled = step.items.map((t, k) => [t, k]).sort((a, b) => ((a[1] * 7 + 3) % 5) - ((b[1] * 7 + 3) % 5));
+      step.items.forEach((_, k) => slots.appendChild(h('div', { class: 'slot' }, `<span class="n">${k + 1}</span><span class="muted">Tap the next step</span>`)));
+      shuffled.forEach(([t, k]) => {
+        const b = h('button', { class: 'choice', type: 'button' }, esc(t));
+        b.addEventListener('click', () => {
+          if (k === placed) {
+            const s = slots.children[placed]; s.classList.add('filled'); s.innerHTML = `<span class="n">${placed + 1}</span><span>${esc(t)}</span>`;
+            b.remove(); placed++; fb.className = ''; fb.innerHTML = '';
+            if (placed === step.items.length) { fb.className = 'fb ok'; fb.innerHTML = '<b>Nice.</b> Open, ask, listen, confirm, set the next step. Every call.'; ready(true); }
+          } else { b.classList.add('wrong'); setTimeout(() => b.classList.remove('wrong'), 500); fb.className = 'fb no'; fb.innerHTML = `<b>Not yet.</b> Step ${placed + 1} comes before that.`; }
+        });
+        pool.appendChild(b);
+      });
+      body.append(slots, pool, fb);
+    },
+
+    flash(step, body, ready) {
+      let i = 0; const seen = new Set();
+      ready(false);
+      body.appendChild(h('p', { class: 'muted' }, esc(step.intro)));
+      const wrap = h('div', { class: 'flash' }); body.appendChild(wrap);
+      const row = h('div', { class: 'frow' }); body.appendChild(row);
+      function draw() {
+        const [q, a] = step.items[i];
+        wrap.innerHTML = '';
+        const c = h('button', { class: 'fcard', type: 'button', 'aria-label': 'Flip card' }, `<div class="face front">${i + 1}. ${esc(q)}</div><div class="face back"><div><b>Answers:</b> ${esc(a)}</div></div>`);
+        c.addEventListener('click', () => { c.classList.toggle('flip'); seen.add(i); if (seen.size === step.items.length) ready(true); });
+        wrap.appendChild(c);
+        row.innerHTML = '';
+        const p = h('button', { class: 'btn ghost', type: 'button' }, 'Previous'); p.disabled = i === 0; p.addEventListener('click', () => { i--; draw(); });
+        const n = h('button', { class: 'btn ghost', type: 'button' }, 'Next card'); n.disabled = i === step.items.length - 1; n.addEventListener('click', () => { i++; draw(); });
+        row.append(p, h('span', { class: 'counter' }, `Card ${i + 1} of ${step.items.length} · flipped ${seen.size}`), n);
+      }
+      draw();
+    },
+
+    multi(step, body, ready) {
+      ready(false);
+      if (step.intro) body.appendChild(h('p', { class: 'muted' }, esc(step.intro)));
+      const sel = new Set();
+      const cs = h('div', { class: 'choices' });
+      const fb = h('div', { 'aria-live': 'polite' });
+      const check = h('button', { class: 'btn', type: 'button', style: 'justify-self:start' }, step.pick ? `Pick ${step.pick}` : 'Check my answer');
+      check.disabled = true;
+      step.items.forEach(([t, ok, why], k) => {
+        const b = h('button', { class: 'choice', type: 'button', 'aria-pressed': 'false' }, esc(t));
+        b.addEventListener('click', () => {
+          if (sel.has(k)) sel.delete(k); else { if (step.pick && sel.size >= step.pick) return; sel.add(k); }
+          b.classList.toggle('sel', sel.has(k)); b.setAttribute('aria-pressed', sel.has(k));
+          check.disabled = step.pick ? sel.size !== step.pick : sel.size === 0;
+          check.textContent = step.pick ? (sel.size === step.pick ? 'Check my top three' : `Pick ${step.pick - sel.size} more`) : 'Check my answer';
+        });
+        cs.appendChild(b);
+      });
+      check.addEventListener('click', () => {
+        let right = 0, total = step.items.length;
+        [...cs.children].forEach((b, k) => {
+          b.disabled = true; b.classList.remove('sel'); const ok = step.items[k][1]; const on = sel.has(k);
+          if (ok && on) { b.classList.add('right'); right++; } else if (ok && !on) b.classList.add('right', 'dim'); else if (!ok && on) b.classList.add('wrong'); else { b.classList.add('dim'); right++; }
+          const why = step.items[k][2]; if (why) b.innerHTML = `${esc(step.items[k][0])}<br><small class="muted">${esc(why)}</small>`;
+        });
+        const perfect = right === total;
+        fb.className = 'fb ' + (perfect ? 'ok' : 'no');
+        fb.innerHTML = perfect ? '<b>Nice.</b> You got every one.' : '<b>Close.</b> The green ones are the right picks. Read the notes under each.';
+        check.remove();
+        const again = h('button', { class: 'btn ghost', type: 'button', style: 'justify-self:start' }, 'Try again');
+        again.addEventListener('click', () => { body.innerHTML = ''; RENDER.multi(step, body, ready); });
+        body.appendChild(again);
+        ready(true);
+      });
+      body.append(cs, check, fb);
+    },
+
+    calc(step, body, ready) {
+      body.appendChild(h('p', { class: 'muted' }, esc(step.intro)));
+      body.appendChild(weekCalc('practice'));
+      ready(true);
+    },
+
+    commit(step, body, ready, m) {
+      ready(!!S.done[m.id]);
+      body.appendChild(h('p', {}, 'Say it out loud, then commit. Your manager will ask about it in your next one-on-one.'));
+      body.appendChild(h('div', { class: 'quote', style: 'font-style:normal;font-weight:600' }, esc(step.habit)));
+      const b = h('button', { class: 'btn', type: 'button', style: 'justify-self:start' }, S.done[m.id] ? 'Committed' : 'I commit to this habit');
+      if (S.done[m.id]) b.disabled = true;
+      b.addEventListener('click', () => { b.disabled = true; b.textContent = 'Committed'; ready(true); });
+      body.appendChild(b);
+    },
+  };
+
+  // ---------- weekly score calculator ----------
+  function weekCalc(prefix) {
+    const daily = ['Prospect first', 'Ask before you pitch', 'Next step on every call', 'CRM the same day', 'Plan tomorrow'];
+    const weekly = ['Friday pipeline check', '15 minutes with your manager', 'Practiced a call'];
+    const d = daily.map(() => 0), w = weekly.map(() => false);
+    const box = h('div', { class: 'calc' });
+    const out = h('div', { class: 'score', 'aria-live': 'polite' });
+    function upd() {
+      const pts = d.reduce((a, b) => a + b, 0) + w.filter(Boolean).length;
+      const pct = Math.round(pts / 28 * 100);
+      const [cls, lab, msg] = pct >= 85 ? ['g', 'Strong week', 'Keep the streak going.'] : pct >= 60 ? ['y', 'Building', 'Pick the habit you missed most and focus on it next week.'] : ['r', 'Reset', 'Talk to your manager about what got in the way.'];
+      const low = d.indexOf(Math.min(...d));
+      out.innerHTML = `<span class="big">${pct}%</span><div><span class="pill ${cls}">${lab}</span><p style="margin:6px 0 0">${pts} of 28 points. ${msg}${pct < 85 ? ` Focus next on <b>${esc(daily[low])}</b>.` : ''}</p></div>`;
+    }
+    daily.forEach((t, k) => {
+      const r = h('div', { class: 'crow' }, `<div class="t">${esc(t)}<small>Days this week (0 to 5)</small></div>`);
+      const sp = h('div', { class: 'stepper' });
+      const o = h('output', { id: `${prefix}-d${k}`, 'aria-live': 'polite' }, '0');
+      const minus = h('button', { type: 'button', 'aria-label': `Fewer days for ${t}` }, '−');
+      const plus = h('button', { type: 'button', 'aria-label': `More days for ${t}` }, '+');
+      minus.addEventListener('click', () => { d[k] = Math.max(0, d[k] - 1); o.textContent = d[k]; upd(); });
+      plus.addEventListener('click', () => { d[k] = Math.min(5, d[k] + 1); o.textContent = d[k]; upd(); });
+      sp.append(minus, o, plus); r.appendChild(sp); box.appendChild(r);
+    });
+    weekly.forEach((t, k) => {
+      const r = h('div', { class: 'crow' }, `<div class="t">${esc(t)}<small>This week</small></div>`);
+      const yn = h('div', { class: 'yn', role: 'group', 'aria-label': t });
+      const y = h('button', { type: 'button', 'aria-pressed': 'false' }, 'Yes'), n = h('button', { type: 'button', class: 'on', 'aria-pressed': 'true' }, 'No');
+      y.addEventListener('click', () => { w[k] = true; y.classList.add('on'); n.classList.remove('on'); y.setAttribute('aria-pressed', 'true'); n.setAttribute('aria-pressed', 'false'); upd(); });
+      n.addEventListener('click', () => { w[k] = false; n.classList.add('on'); y.classList.remove('on'); n.setAttribute('aria-pressed', 'true'); y.setAttribute('aria-pressed', 'false'); upd(); });
+      yn.append(y, n); r.appendChild(yn); box.appendChild(r);
+    });
+    box.appendChild(out); upd();
+    return box;
+  }
+
+  // ---------- tools ----------
+  function tools() {
+    const main = $('#main'); main.innerHTML = '';
+    const st = h('section', { class: 'stage' });
+    st.appendChild(h('div', { class: 'stage-h' }, '<span class="eyebrow">Use these every day</span><h2>Tools</h2>'));
+    const b = h('div', { class: 'stage-b tools' }); st.appendChild(b);
+
+    const dc = h('div', { class: 'tool' }, '<h3>Deal Check</h3><p class="muted">After a call, mark each answer. You get the color and what to do next.</p>');
+    const ans = {};
+    const res = h('div', { class: 'score', 'aria-live': 'polite' });
+    const grid = h('div', { class: 'ntab' });
+    NTAB.forEach(q => {
+      const r = h('div', { class: 'r' }, `<b>${q}</b>`);
+      const g = h('div', { class: 'ypn', role: 'group', 'aria-label': q });
+      ['Yes', 'Partly', 'No'].forEach(v => {
+        const btn = h('button', { type: 'button', class: v.toLowerCase(), 'aria-pressed': 'false' }, v);
+        btn.addEventListener('click', () => { ans[q] = v; [...g.children].forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); }); btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); verdict(); });
+        g.appendChild(btn);
+      });
+      r.appendChild(g); grid.appendChild(r);
+    });
+    function verdict() {
+      const n = ans.Need;
+      if (!n) { res.innerHTML = '<span class="pill n">Not scored</span><p style="margin:0">Start with Need.</p>'; return; }
+      const others = ['Timeline', 'Authority', 'Budget'].filter(k => ans[k] === 'Yes').length;
+      const missing = ['Timeline', 'Authority', 'Budget'].filter(k => ans[k] !== 'Yes');
+      let c, l, m;
+      if (n === 'No') { c = 'r'; l = 'Red'; m = 'Thank them, set a check-in date a few months out, and move on.'; }
+      else if (n === 'Yes' && others >= 2) { c = 'g'; l = 'Green'; m = 'Book the next meeting and bring in your manager or a solution engineer.'; }
+      else { c = 'y'; l = 'Yellow'; m = n === 'Partly' ? 'Dig into the need. Ask what it has cost them.' : `Your next step is to answer: ${missing.join(', ')}.`; }
+      res.innerHTML = `<span class="pill ${c}">${l}</span><p style="margin:0">${esc(m)}</p>`;
+    }
+    verdict();
+    const clear = h('button', { class: 'btn ghost', type: 'button', style: 'justify-self:start' }, 'Clear');
+    clear.addEventListener('click', () => { for (const k in ans) delete ans[k]; grid.querySelectorAll('button').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); }); verdict(); });
+    dc.append(grid, res, clear); b.appendChild(dc);
+
+    const wk = h('div', { class: 'tool' }, '<h3>My week</h3><p class="muted">On Friday, count the days you did each habit. Then enter the same numbers in the Weekly Log in the Habit Tracker.</p>');
+    wk.appendChild(weekCalc('tool'));
+    wk.appendChild(h('p', { class: 'muted', style: 'margin:0' }, 'The Habit Tracker is in the Sales site on SharePoint: <a href="https://borderlan.sharepoint.com/sites/Sales/Sales%20Enablement/Forms/AllItems.aspx" target="_blank" rel="noopener">open the Sales Enablement library</a>.'));
+    b.appendChild(wk);
+
+    const tq = h('div', { class: 'tool' }, '<h3>The ten questions</h3>');
+    const ol = h('ol', { class: 'ten' });
+    MODULES[2].steps.find(s => s.kind === 'flash').items.forEach(([q]) => ol.appendChild(h('li', {}, esc(q))));
+    tq.appendChild(ol);
+    tq.appendChild(h('p', { class: 'muted', style: 'margin:0' }, 'After any answer: "Tell me more about that." or "What did that cost you?"'));
+    b.appendChild(tq);
+    main.appendChild(st);
+  }
+
+  function finish() {
+    const main = $('#main'); main.innerHTML = '';
+    const st = h('section', { class: 'stage' });
+    const n = doneCount(), all = n === MODULES.length;
+    const left = MODULES.filter(m => !S.done[m.id]).map(m => m.title);
+    st.appendChild(h('div', { class: 'badge' }, `
+      <div class="seal">${all ? '✓' : n + '/7'}</div>
+      <h2>${all ? 'You are ready for your mock call' : 'Almost there'}</h2>
+      <p class="muted" style="max-width:56ch">${all ? 'In week 12, you run a 10-minute mock call with your manager. You pass with five of these six.' : 'Finish these modules to unlock your mock call: ' + esc(left.join(', ')) + '.'}</p>
+      <ul class="checklist">
+        <li>Opened in about 30 seconds: name, reason for the call, asked for time</li>
+        <li>Asked at least three questions before talking about a product</li>
+        <li>Got an answer for Need, and asked about Timeline, Authority, and Budget</li>
+        <li>Confirmed what they heard in the customer’s words</li>
+        <li>Set a next step with a date and time</li>
+        <li>Logged the call in the CRM before the end of the day</li>
+      </ul>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+        <button class="btn brand" type="button" id="finA">${all ? 'Practice the live call again' : 'Go to the next module'}</button>
+        <button class="btn ghost" type="button" id="finB">Start over</button>
+      </div>`));
+    main.appendChild(st);
+    $('#finA').addEventListener('click', () => { if (all) { S.pos.m2 = 2; save(); go('m2'); } else go(MODULES.find(m => !S.done[m.id]).id); });
+    const fb = $('#finB');
+    fb.addEventListener('click', () => {
+      if (fb.dataset.armed) { S = { done: {}, quiz: {}, pos: {} }; save(); meter(); toast('Progress cleared'); go('home'); }
+      else { fb.dataset.armed = '1'; fb.textContent = 'Tap again to clear all progress'; setTimeout(() => { if (fb.isConnected) { delete fb.dataset.armed; fb.textContent = 'Start over'; } }, 4000); }
+    });
+  }
+
+  // ---------- routing ----------
+  function go(id) {
+    if (location.hash !== '#' + id) { try { history.replaceState(null, '', '#' + id); } catch (e) {} }
+    rail(id); meter();
+    const m = MODULES.find(x => x.id === id);
+    if (m) moduleView(m); else if (id === 'tools') tools(); else if (id === 'finish') finish(); else home();
+    $('#main').focus?.();
+  }
+  window.addEventListener('hashchange', () => go(location.hash.slice(1) || 'home'));
+  go((location.hash || '#home').slice(1));
+})();
+</script>
+</body>
+</html>
