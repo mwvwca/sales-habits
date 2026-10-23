@@ -154,6 +154,29 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
 .ypn button.on.partly { background: var(--warn); color: var(--on-brand); }
 .ypn button.on.no { background: var(--stop); color: var(--on-brand); }
 .ten { margin: 0; padding-left: 22px; display: grid; gap: 4px; }
+.dc { gap: 14px; }
+.dc-h { display: flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 700; font-size: 16px; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--line); }
+.dc-h .k { width: 26px; height: 26px; border-radius: 7px; background: var(--ink); color: var(--brand); display: grid; place-items: center; font-size: 14px; font-weight: 800; flex: none; }
+.fgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 12px; }
+.fgrid.four { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr); }
+.fgrid.four > .fld:first-child { grid-column: 1 / -1; }
+.fld { display: grid; gap: 4px; font-size: 14px; font-weight: 600; color: var(--muted); min-width: 0; }
+.fld input, .fld textarea { font: inherit; font-size: 16px; font-weight: 400; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 9px; padding: 9px 11px; width: 100%; min-width: 0; }
+.fld textarea { resize: vertical; }
+.fld input:focus, .fld textarea:focus { outline: 2px solid var(--brand); outline-offset: 0; border-color: var(--brand); }
+.qrow { display: grid; gap: 6px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.qrow:last-child { border-bottom: 0; }
+.hint { font-size: 15px; background: var(--tint); border-radius: 8px; padding: 8px 12px; line-height: 1.45; }
+.hint .hl { font-weight: 700; color: var(--brand-deep); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 99px; padding: 7px 14px; cursor: pointer; font-size: 15px; }
+.chip:hover { border-color: var(--brand); }
+.chip.on { background: var(--brand-deep); border-color: var(--brand-deep); color: var(--on-brand); font-weight: 600; }
+.prods { display: grid; gap: 10px; }
+.sug:empty { display: none; }
+.sug .btn { text-align: left; font-weight: 600; font-size: 15px; }
+.note { margin: 0; white-space: pre-wrap; word-break: break-word; font: 15px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+@media (max-width: 820px) { .fgrid.four { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .fgrid.four > .fld:last-child { grid-column: 1 / -1; } }
 .ten li::marker { color: var(--brand-deep); font-weight: 700; }
 .toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 99px; font-weight: 600; font-size: 15px; z-index: 20; }
 .badge { display: grid; place-items: center; text-align: center; gap: 10px; padding: 30px 20px; }
@@ -703,41 +726,182 @@ h3 { font-family: var(--f-display); font-weight: 700; font-size: 20px; margin: 0
   }
 
   // ---------- tools ----------
+  // ---------- Deal Check ----------
+  const ASK = {
+    Need: { q: ['How do you handle security today, and who does it?', 'If you were hit tomorrow, how long would it take to get back up and running?'], listen: 'a real problem, a scare in the last year, or a gap nobody covers' },
+    Timeline: { q: ['Is there a date coming up that matters, like a renewal, an audit, or a new school year?', 'What does your cyber insurance carrier ask you to have in place?'], listen: 'a renewal, a contract ending, an audit, a board meeting, or the start of their fiscal year' },
+    Authority: { q: ['Who else would weigh in on a decision like this?', 'Can we set up a short call with them and you next week?'], listen: 'names and titles: IT director, business manager or CFO, superintendent, owner, the board' },
+    Budget: { q: ['How do purchases like this usually get paid for?', 'When does your fiscal year start, and does that change the timing?'], listen: 'a line item, a tool they already pay for, grant money, or a project already approved' },
+  };
+  const PAINS = [
+    ['Nobody watches alerts after hours', ['mon']],
+    ['Phishing or a staff member clicked', ['trn', 'fw']],
+    ['Old or unmanaged firewall', ['fw']],
+    ['Untested backups or ransomware worry', ['bak']],
+    ['Students and web filtering', ['fil']],
+    ['Cyber insurance is asking for more', ['bak', 'trn']],
+  ];
+  const DKEY = 'bl-dealcheck-draft';
+  function dealCheck() {
+    let D = { account: '', contact: '', words: '', ans: {}, pains: [], what: '', date: '', time: '', who: '' };
+    try { const r = localStorage.getItem(DKEY); if (r) D = Object.assign(D, JSON.parse(r)); } catch (e) {}
+    const keep = () => { try { localStorage.setItem(DKEY, JSON.stringify(D)); } catch (e) {} };
+    const box = h('div', { class: 'tool dc' });
+    box.innerHTML = '<h3>Deal Check</h3><p class="muted" style="margin:0">Fill this in right after a call. It tells you the deal color, what to ask next, which product fits, and writes your CRM note.</p>';
+
+    const field = (id, label, type, ph) => {
+      const w = h('label', { class: 'fld', for: id }, `<span>${esc(label)}</span>`);
+      const el = type === 'area' ? h('textarea', { id, rows: '2', placeholder: ph }) : h('input', { id, type, placeholder: ph || '' });
+      w.appendChild(el); return [w, el];
+    };
+    const sec = (n, t) => h('div', { class: 'dc-h' }, `<span class="k">${n}</span>${esc(t)}`);
+
+    // 1. Who
+    box.appendChild(sec(1, 'Who you talked to'));
+    const row1 = h('div', { class: 'fgrid' });
+    const [fa, ia] = field('dc-account', 'Account', 'text', 'Valley USD');
+    const [fc, ic] = field('dc-contact', 'Contact and title', 'text', 'Dana Ruiz, IT Director');
+    row1.append(fa, fc); box.appendChild(row1);
+    const [fw, iw] = field('dc-words', 'What they said, in their words', 'area', 'We had a phishing scare in March and it took a week to clean up.');
+    box.appendChild(fw);
+
+    // 2. Four questions
+    box.appendChild(sec(2, 'The four questions'));
+    const qwrap = h('div', { class: 'ntab' }); box.appendChild(qwrap);
+    const rows = {};
+    NTAB.forEach(q => {
+      const r = h('div', { class: 'qrow' });
+      const top = h('div', { class: 'r' }, `<b>${q}</b>`);
+      const g = h('div', { class: 'ypn', role: 'group', 'aria-label': q });
+      ['Yes', 'Partly', 'No'].forEach(v => {
+        const btn = h('button', { type: 'button', class: v.toLowerCase(), 'aria-pressed': 'false' }, v);
+        btn.addEventListener('click', () => { D.ans[q] = D.ans[q] === v ? undefined : v; if (!D.ans[q]) delete D.ans[q]; keep(); paint(); });
+        g.appendChild(btn);
+      });
+      top.appendChild(g);
+      const hint = h('div', { class: 'hint' });
+      r.append(top, hint); qwrap.appendChild(r);
+      rows[q] = { g, hint };
+    });
+
+    // 3. Pain and product
+    box.appendChild(sec(3, 'What problem came up?'));
+    box.appendChild(h('p', { class: 'muted', style: 'margin:0;font-size:15px' }, 'Tap anything they mentioned. You get the product that fits and the question to dig deeper.'));
+    const chips = h('div', { class: 'chips' }); box.appendChild(chips);
+    PAINS.forEach(([t], k) => {
+      const c = h('button', { type: 'button', class: 'chip', 'aria-pressed': 'false' }, esc(t));
+      c.addEventListener('click', () => { const i = D.pains.indexOf(k); if (i >= 0) D.pains.splice(i, 1); else D.pains.push(k); keep(); paint(); });
+      chips.appendChild(c);
+    });
+    const prod = h('div', { class: 'prods' }); box.appendChild(prod);
+
+    // 4. Result
+    box.appendChild(sec(4, 'Where the deal stands'));
+    const res = h('div', { class: 'score dc-res', 'aria-live': 'polite' }); box.appendChild(res);
+
+    // 5. Next step
+    box.appendChild(sec(5, 'Next step'));
+    const sug = h('div', { class: 'sug' }); box.appendChild(sug);
+    const row2 = h('div', { class: 'fgrid four' });
+    const [fwh, iwh] = field('dc-what', 'What', 'text', 'Review with Dana and her business manager');
+    const [fd, idt] = field('dc-date', 'Date', 'date');
+    const [ft, itm] = field('dc-time', 'Time', 'time');
+    const [fwo, iwo] = field('dc-who', 'Who will be there', 'text', 'Dana, Linda (business manager)');
+    row2.append(fwh, fd, ft, fwo); box.appendChild(row2);
+    const warn = h('div', { 'aria-live': 'polite' }); box.appendChild(warn);
+
+    // 6. CRM note
+    box.appendChild(sec(6, 'Your CRM note'));
+    const note = h('pre', { class: 'note', tabindex: '0' }); box.appendChild(note);
+    const acts = h('div', { style: 'display:flex;gap:10px;flex-wrap:wrap' });
+    const copy = h('button', { class: 'btn brand', type: 'button' }, 'Copy CRM note');
+    const fresh = h('button', { class: 'btn ghost', type: 'button' }, 'Start a new check');
+    acts.append(copy, fresh); box.appendChild(acts);
+
+    const inputs = [[ia, 'account'], [ic, 'contact'], [iw, 'words'], [iwh, 'what'], [idt, 'date'], [itm, 'time'], [iwo, 'who']];
+    inputs.forEach(([el, k]) => { el.value = D[k] || ''; el.addEventListener('input', () => { D[k] = el.value; keep(); paint(); }); });
+
+    const fmtDate = s => { if (!s) return ''; const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }); };
+    const fmtTime = s => { if (!s) return ''; const [hh, mm] = s.split(':').map(Number); return new Date(2000, 0, 1, hh, mm).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }); };
+    const loc = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const isoIn = days => { const d = new Date(); d.setDate(d.getDate() + days); return loc(d); };
+
+    function verdict() {
+      const n = D.ans.Need;
+      const rest = ['Timeline', 'Authority', 'Budget'];
+      const yes = rest.filter(k => D.ans[k] === 'Yes');
+      const open = rest.filter(k => D.ans[k] !== 'Yes');
+      if (!n) return { c: 'n', l: 'Not scored', why: 'Start with Need. If there is no need, the other three do not matter.', next: null };
+      if (n === 'No') return { c: 'r', l: 'Red', why: 'Need is No, so this is not an opportunity right now.', next: { what: 'Check-in call to see if anything has changed', days: 90, txt: 'Thank them, set a check-in about three months out, and move on.' } };
+      if (n === 'Yes' && yes.length >= 2) return { c: 'g', l: 'Green', why: `Need is Yes, and so are ${yes.join(' and ')}.`, next: { what: 'Meeting with the decision maker, plus your manager or solution engineer', days: 7, txt: 'Book the next meeting and bring in your manager or a solution engineer.' } };
+      if (n === 'Partly') return { c: 'y', l: 'Yellow', why: 'The need is not clear yet. Nothing else matters until it is.', next: { what: 'Follow-up call to dig into the problem', days: 3, txt: 'Book a short follow-up and ask what the problem has cost them.' } };
+      const need = 2 - yes.length, first = open[0];
+      return { c: 'y', l: 'Yellow', why: `Need is Yes. To reach Green, get ${need === 1 ? 'one more' : 'two'} of these to Yes: ${open.join(', ')}.`, next: { what: `Follow-up to answer ${first}`, days: 3, txt: `Start with ${first}: "${ASK[first].q[0]}"` } };
+    }
+
+    function paint() {
+      NTAB.forEach(q => {
+        const v = D.ans[q]; const { g, hint } = rows[q];
+        [...g.children].forEach(b => { const on = b.textContent === v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+        if (v === 'Partly' || v === 'No') {
+          hint.hidden = false;
+          hint.innerHTML = `<span class="hl">${v === 'Partly' ? 'You have a hint. Confirm it:' : 'Not there yet. Find out:'}</span> “${esc(ASK[q].q[0])}” <span class="muted">Then: “${esc(ASK[q].q[1])}” Listen for ${esc(ASK[q].listen)}.</span>`;
+        } else if (!v && q !== 'Need' && D.ans.Need && D.ans.Need !== 'No') {
+          hint.hidden = false; hint.innerHTML = `<span class="hl">Not asked yet:</span> “${esc(ASK[q].q[0])}”`;
+        } else { hint.hidden = true; hint.innerHTML = ''; }
+      });
+      [...chips.children].forEach((c, k) => { const on = D.pains.includes(k); c.classList.toggle('on', on); c.setAttribute('aria-pressed', on); });
+      const ids = [...new Set(D.pains.flatMap(k => PAINS[k][1]))];
+      prod.innerHTML = '';
+      ids.forEach(id => { const x = PRODUCTS.find(p => p.id === id); prod.appendChild(h('div', { class: 'lcard' }, `<b>${esc(x.name)}</b><span>${esc(x.two)}</span><small><b>Dig deeper:</b> “${esc(x.q)}”</small>`)); });
+      if (ids.length && !D.ans.Need) prod.appendChild(h('p', { class: 'muted', style: 'margin:0;font-size:15px' }, 'That sounds like a Need. If they said it matters to them, mark Need as Yes.'));
+
+      const v = verdict();
+      res.innerHTML = `<span class="pill ${v.c}">${v.l}</span><div><p style="margin:0"><b>${esc(v.why)}</b></p>${v.next ? `<p style="margin:4px 0 0">${esc(v.next.txt)}</p>` : ''}</div>`;
+      sug.innerHTML = '';
+      if (v.next) {
+        const s = h('button', { class: 'btn ghost', type: 'button' }, `Use suggested next step: ${esc(v.next.what)}, ${esc(fmtDate(isoIn(v.next.days)))}`);
+        s.addEventListener('click', () => { D.what = v.next.what; D.date = isoIn(v.next.days); iwh.value = D.what; idt.value = D.date; keep(); paint(); });
+        sug.appendChild(s);
+      }
+      const missing = [];
+      if (!D.what) missing.push('what'); if (!D.date) missing.push('a date'); if (!D.time) missing.push('a time'); if (!D.who) missing.push('who');
+      const past = D.date && D.date < loc(new Date());
+      warn.className = missing.length || past ? 'fb no' : 'fb ok';
+      warn.innerHTML = past ? '<b>That date is in the past.</b> Pick a date ahead.' : missing.length === 4 ? '<b>No next step yet.</b> A call without a next step is a call that did not happen.' : missing.length ? `<b>Almost.</b> Add ${missing.join(', ')}.` : '<b>Strong next step.</b> Send the calendar invite now.';
+
+      const today = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      const lines = [];
+      lines.push([D.account || '[Account]', D.contact || '[Contact, title]', today].join(' | '));
+      lines.push('Their words: ' + (D.words ? '"' + D.words.trim() + '"' : '[what they said]'));
+      lines.push(NTAB.map(q => `${q}: ${D.ans[q] || '?'}`).join(' | ') + (v.c !== 'n' ? `  (${v.l})` : ''));
+      if (ids.length) lines.push('Fit: ' + ids.map(id => PRODUCTS.find(p => p.id === id).name).join(', '));
+      lines.push('Next step: ' + ([D.what, [fmtDate(D.date), fmtTime(D.time)].filter(Boolean).join(' at '), D.who ? 'with ' + D.who : ''].filter(Boolean).join(', ') || '[none set]'));
+      note.textContent = lines.join('\n');
+    }
+
+    copy.addEventListener('click', () => {
+      const t = note.textContent;
+      const sel = () => { const r = document.createRange(); r.selectNodeContents(note); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('Note selected. Press Ctrl+C or Cmd+C to copy.'); };
+      try { navigator.clipboard.writeText(t).then(() => toast('CRM note copied'), sel); } catch (e) { sel(); }
+    });
+    let armed = false;
+    fresh.addEventListener('click', () => {
+      if (!armed) { armed = true; fresh.textContent = 'Tap again to clear this check'; setTimeout(() => { armed = false; fresh.textContent = 'Start a new check'; }, 4000); return; }
+      D = { account: '', contact: '', words: '', ans: {}, pains: [], what: '', date: '', time: '', who: '' }; keep();
+      inputs.forEach(([el]) => { el.value = ''; }); armed = false; fresh.textContent = 'Start a new check'; paint(); ia.focus();
+    });
+    paint();
+    return box;
+  }
+
   function tools() {
     const main = $('#main'); main.innerHTML = '';
     const st = h('section', { class: 'stage' });
     st.appendChild(h('div', { class: 'stage-h' }, '<span class="eyebrow">Use these every day</span><h2>Tools</h2>'));
     const b = h('div', { class: 'stage-b tools' }); st.appendChild(b);
 
-    const dc = h('div', { class: 'tool' }, '<h3>Deal Check</h3><p class="muted">After a call, mark each answer. You get the color and what to do next.</p>');
-    const ans = {};
-    const res = h('div', { class: 'score', 'aria-live': 'polite' });
-    const grid = h('div', { class: 'ntab' });
-    NTAB.forEach(q => {
-      const r = h('div', { class: 'r' }, `<b>${q}</b>`);
-      const g = h('div', { class: 'ypn', role: 'group', 'aria-label': q });
-      ['Yes', 'Partly', 'No'].forEach(v => {
-        const btn = h('button', { type: 'button', class: v.toLowerCase(), 'aria-pressed': 'false' }, v);
-        btn.addEventListener('click', () => { ans[q] = v; [...g.children].forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); }); btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); verdict(); });
-        g.appendChild(btn);
-      });
-      r.appendChild(g); grid.appendChild(r);
-    });
-    function verdict() {
-      const n = ans.Need;
-      if (!n) { res.innerHTML = '<span class="pill n">Not scored</span><p style="margin:0">Start with Need.</p>'; return; }
-      const others = ['Timeline', 'Authority', 'Budget'].filter(k => ans[k] === 'Yes').length;
-      const missing = ['Timeline', 'Authority', 'Budget'].filter(k => ans[k] !== 'Yes');
-      let c, l, m;
-      if (n === 'No') { c = 'r'; l = 'Red'; m = 'Thank them, set a check-in date a few months out, and move on.'; }
-      else if (n === 'Yes' && others >= 2) { c = 'g'; l = 'Green'; m = 'Book the next meeting and bring in your manager or a solution engineer.'; }
-      else { c = 'y'; l = 'Yellow'; m = n === 'Partly' ? 'Dig into the need. Ask what it has cost them.' : `Your next step is to answer: ${missing.join(', ')}.`; }
-      res.innerHTML = `<span class="pill ${c}">${l}</span><p style="margin:0">${esc(m)}</p>`;
-    }
-    verdict();
-    const clear = h('button', { class: 'btn ghost', type: 'button', style: 'justify-self:start' }, 'Clear');
-    clear.addEventListener('click', () => { for (const k in ans) delete ans[k]; grid.querySelectorAll('button').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); }); verdict(); });
-    dc.append(grid, res, clear); b.appendChild(dc);
+    b.appendChild(dealCheck());
 
     const wk = h('div', { class: 'tool' }, '<h3>My week</h3><p class="muted">On Friday, count the days you did each habit. Then enter the same numbers in the Weekly Log in the Habit Tracker.</p>');
     wk.appendChild(weekCalc('tool'));
